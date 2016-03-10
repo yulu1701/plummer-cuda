@@ -145,6 +145,6 @@ __global__ void leapint(vector3 *p, vector3 *v, double dt) {
 __global__ void print_position(vector3 *p) {
   int i = blockDim.x * blockIdx.x + threadIdx.x;
   if (i < NUM_PARTICLES) {
-    printf("%lu,%.6lf,%.6lf,%.6lf\n", i, p[i].x, p[i].y, p[i].z);
+    printf("%d,%.6lf,%.6lf,%.6lf\n", i, p[i].x, p[i].y, p[i].z);
   }
 }
