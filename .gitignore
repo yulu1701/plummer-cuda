@@ -1,0 +1,4 @@
+*.o
+plummer_stable
+plummer_unstable
+.DS_Store
