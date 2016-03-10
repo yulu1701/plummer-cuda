@@ -104,7 +104,7 @@ void new_particle(vector3 *p, vector3 *v) {
     v->x = sqrt((V * V - v->z * v->z)) * cos(2 * PI * X7);
     v->y = sqrt((V * V - v->z * v->z)) * sin(2 * PI * X7);
   #else
-    v = (vector3) {0.0, 0.0, 0.0};
+    (*v) = (vector3) {0.0, 0.0, 0.0};
   #endif
 }
 
