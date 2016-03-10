@@ -2,6 +2,8 @@ NVCC = /usr/local/cuda-5.5/bin/nvcc
 
 .PHONY: clean
 
+all: plummer
+
 clean:
 	rm -f plummer_stable plummer_unstable
 
