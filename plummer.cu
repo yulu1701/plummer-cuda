@@ -62,13 +62,13 @@ int main(const int argc, const char** argv) {
 
     leapint<<<num_blocks, BLOCK_SIZE>>>(device_particles.p, device_particles.v, dt);
     cudaDeviceSynchronize();
-    integrate_position<<<num_blocks, BLOCK_SIZE>>>(device_particles.p, dt);
+    integrate_position<<<num_blocks, BLOCK_SIZE>>>(device_particles.p, device_particles.v, dt);
     cudaDeviceSynchronize();
     leapint<<<num_blocks, BLOCK_SIZE>>>(device_particles.p, device_particles.v, dt);
     cudaDeviceSynchronize();
   }
   if (nstep % nout == 0) {
-    print_position<<<num_blocks, BLOCK_SIZE>>>();
+    print_position<<<num_blocks, BLOCK_SIZE>>>(device_particles.p);
     cudaDeviceSynchronize();
   }
 
